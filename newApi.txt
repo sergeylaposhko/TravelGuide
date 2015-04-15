@@ -1,0 +1,82 @@
+######CITY
+
+//returns all cities in the programm
+GET /cities?from?&to=?
+
+//returns city by id
+GET /cities/{id}
+
+//returns cities which matches specified name
+GET /cities/name/{name}
+
+//creates new city !!ADD FILE TO API
+POST /cities?sessionId=? {info:'someInfoText'}
+
+//returns places in the city
+GET /cities/{id}/places
+
+//returns places in the city by keyword
+GET /cities/{id}/places/keyword/{key}
+
+//returns all questions in the city
+GET /cities/{id}/questions
+
+//returns question in the city specified by the keyword
+GET /cities/{id}/questions/keyword/{key}
+
+//creates question in the city
+POST /cities/{id}/questions?sessionId=? {header:'', text:''}
+
+//returns guides in the city
+GET /cities/{id}/guides
+
+#######USERS
+//reurns cities where the user can be a guide
+GET /users/{id}/cities
+
+//makes user with specified id be able to be a guide in this city
+POST /users/{id}/cities/{citId}?sessionId=?
+
+//returns places of the user
+GET /users/{userId}/places?sessionId=?
+
+
+
+#######PLACES
+
+//returns place by id
+GET places/{id}
+
+
+!!look for passing info about the place city
+//creates place from passed data
+POST places?sessionId=? {info:'some place info'} 
+
+########question
+
+//returns the question with answers
+GET /questions/{id}
+
+//creates new answer
+POST /questions/{id}/answers?sessionId=? {text:''}
+
+########guides
+
+//returns guides by keyword
+GET guides/keyword/{key}
+
+//returns guide by id
+GET guides/{id}
+
+#########USER
+
+//register
+POST users 
+{firstName:'', lastName:'',sex:'m',countryId:'',photo:'',aboutMe:'',password:md5(password)}
+
+#########SESSION
+
+//login
+POST /sessions {login:'',password:''}
+
+DELETE /sessions/{sessionId}
