@@ -1,0 +1,7 @@
+logs/*
+!.gitkeep
+restClient/node_modules/
+restClient/**/bower_components/
+tmp
+.DS_Store
+.idea
