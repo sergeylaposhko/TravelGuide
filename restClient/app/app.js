@@ -5,8 +5,10 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.main',
   'myApp.second',
-  'myApp.version'
+  'myApp.fileUpload'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/main'});
+config(['$routeProvider', function ($routeProvider) {
+    $routeProvider.otherwise({
+        redirectTo: '/main'
+    });
 }]);
